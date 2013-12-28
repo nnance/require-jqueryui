@@ -156,12 +156,6 @@ module.exports = function (grunt) {
         /*uglify: {
             dist: {}
         },*/
-        'bower-install': {
-            app: {
-                html: '<%= yeoman.app %>/index.html',
-                ignorePath: '<%= yeoman.app %>/'
-            }
-        },
         rev: {
             dist: {
                 files: {
@@ -186,6 +180,25 @@ module.exports = function (grunt) {
             },
             html: ['<%= yeoman.dist %>/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
+        },
+        requirejs: {
+            dist: {
+                // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
+                options: {
+                    baseUrl: '<%= yeoman.app %>/scripts',
+                    dir: '<%= yeoman.dist %>/scripts',
+                    optimize: 'uglify',
+                    // TODO: Figure out how to make sourcemaps work with grunt-usemin
+                    // https://github.com/yeoman/grunt-usemin/issues/30
+                    //generateSourceMaps: true,
+                    // required to support SourceMaps
+                    // http://requirejs.org/docs/errors.html#sourcemapcomments
+                    preserveLicenseComments: false,
+                    useStrict: true,
+                    wrap: true
+                    //uglify2: {} // https://github.com/mishoo/UglifyJS2
+                }
+            }
         },
         imagemin: {
             dist: {
@@ -327,6 +340,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
+        'requirejs',
         'concurrent:dist',
         'autoprefixer',
         'concat',

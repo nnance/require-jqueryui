@@ -11,6 +11,9 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="bower_components/jquery.ui/themes/base/jquery.ui.core.css">
+        <link rel="stylesheet" href="bower_components/jquery.ui/themes/base/jquery.ui.button.css">
+        <link rel="stylesheet" href="bower_components/jquery.ui/themes/base/jquery.ui.datepicker.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
@@ -36,8 +39,8 @@
             <div class="jumbotron">
                 <h2>RequireJS JQueryUI Sample</h2>
                 <p class="lead">Try out some the examples below:</p>
-                <p>Spinner:</p>
-                <p>Date Picker:</p>
+                <p>Spinner: </p>
+                <p>Date Picker: <input type="text" id="datepicker"></p>
                 <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
             </div>
 
@@ -61,13 +64,6 @@
 
         </div>
 
-
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -78,23 +74,6 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-
-        <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
-        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
-        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
-        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
-        <script src="bower_components/sass-bootstrap/js/button.js"></script>
-        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
-        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
-        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
+        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>
